@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_uncle - finds the sibling of the parent of current
- * 			node
+ * node
  * @node: pointer to node
  * Return: NULL if parent or uncle doesnt exist, uncle if exist
  */
