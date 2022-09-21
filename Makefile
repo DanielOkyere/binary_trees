@@ -14,6 +14,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: binary_trees.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+	make oclean
 
 clean:
 	${RM} *~ $(NAME)
