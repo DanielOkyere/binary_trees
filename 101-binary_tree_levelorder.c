@@ -26,6 +26,7 @@ int theight(const binary_tree_t *tree)
  * printCurrentLevel - prints node at current level
  * @tree: pointer to treee
  * @level: level to print
+ * @func: func call
  */
 void printCurrentLevel(const binary_tree_t *tree, int level, void (*func)(int))
 {
