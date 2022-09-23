@@ -8,37 +8,29 @@
  */
 int main(void)
 {
-	binary_tree_t *root;
-	int complete;
 
-	root = binary_tree_node(NULL, 98);
-	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 128);
-	root->left->right = binary_tree_node(root->left, 54);
-	root->right->right = binary_tree_node(root, 402);
-	root->left->left = binary_tree_node(root->left, 10);
+	bst_t *root;
+	bst_t *node;
 
+	root = NULL;
+	node = bst_insert(&root, 98);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 402);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 12);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 46);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 128);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 256);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 512);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 1);
+	printf("Inserted: %d\n", node->n);
+	node = bst_insert(&root, 128);
+	printf("Node should be nil -> %p\n", (void *)node);
 	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
-	complete = binary_tree_is_complete(root->left);
-	printf("Is %d complete: %d\n", root->left->n, complete);
-
-	root->right->left = binary_tree_node(root->right, 112);
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
-
-	root->left->left->left = binary_tree_node(root->left->left, 8);
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
-
-	root->left->right->left = binary_tree_node(root->left->right, 23);
-	binary_tree_print(root);
-	complete = binary_tree_is_complete(root);
-	printf("Is %d complete: %d\n", root->n, complete);
-
-	binary_tree_delete(root);
 	return (0);
 }

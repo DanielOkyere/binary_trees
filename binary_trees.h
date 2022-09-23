@@ -33,6 +33,10 @@ typedef struct levelorder_queue_s
 	struct levelorder_queue_s *next;
 } levelorder_queue_t;
 
+typedef struct binary_tree_s bst_t;
+typedef struct binary_tree_s avl_t;
+typedef struct binary_tree_s heap_t;
+
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -70,5 +74,7 @@ void free_queue(levelorder_queue_t *head);
 void push(binary_tree_t *node, levelorder_queue_t *head,
 	  levelorder_queue_t **tail);
 void pop(levelorder_queue_t **head);
+int binary_tree_is_bst(const binary_tree_t *tree);
+bst_t *bst_insert(bst_t **tree, int value);
 
 #endif /* _BINARY_TREES_H_ */
