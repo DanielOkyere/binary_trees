@@ -1,5 +1,6 @@
 #ifndef _BINARY_TREES_H_
 #define _BINARY_TREES_H_
+#define MAX_Q_SIZE 500
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -44,5 +45,12 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+int binary_tree_is_complete(const binary_tree_t *tree);
+const binary_tree_t **createQueue(int *front, int *rear);
+void enQueue(const binary_tree_t **queue, int *rear, const binary_tree_t *new_node);
+const binary_tree_t *deQueue(const binary_tree_t **queue, int *front);
+int isQueueEmpty(int *front, int *rear);
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
