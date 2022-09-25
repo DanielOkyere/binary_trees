@@ -40,7 +40,7 @@ int is_avl(const binary_tree_t *tree, int lo, int hi)
 }
 
 /**
- * bheight - determines the height of the binary tree
+ * avl_height - determines the height of the binary tree
  * @tree: node to the binary tree
  * Return: int height of the binary tree
  */
