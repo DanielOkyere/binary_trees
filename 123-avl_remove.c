@@ -8,7 +8,7 @@ avl_t *avl_remove(avl_t *root, int value)
     return (NULL);
   bal(&root_a);
   return (root_a);
-  
+
 }
 
 bst_t *bst_remove(bst_t *root, int value)
